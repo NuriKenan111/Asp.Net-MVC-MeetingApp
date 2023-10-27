@@ -1,0 +1,22 @@
+@model MeetingInfo
+@{
+    ViewBag.Title = "MainPage";
+    Layout = "_Layout2";
+}
+
+<h1 class = "h4">Welcome Home</h1>
+<p>Toplati Katilim Durumunuzu bildiriniz</p>
+
+<div class="card my-2">
+    <ul class="list-group list-group flush">
+        <li class="list-group-item">@Model.Location</li>
+        <li class="list-group-item">@Model.Date Tarihinde Gercekleşecek</li>
+        <li class="list-group-item">@Model.NumberOfPeople Katilimci</li>
+    </ul>
+</div>
+<a class= "btn btn-sm btn-outline-primary" asp-controller="Meeting" asp-action="Apply">Giris ucun </a>
+
+
+
+
+
