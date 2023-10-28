@@ -1,0 +1,21 @@
+@model UserInfo
+@{
+    ViewBag.Title = "MeetingDetails";
+}
+
+@{ 
+    var className = Model.WillAttend == true ? "success" : "danger";
+    var isCheck = Model.WillAttend == true ? "participating" : "Does Not Participating";  
+}
+
+
+<main class="text-center">
+    <h1 class="h4">Application Details</h1>
+    <p>
+        <span class = "badge text-bg-@className">@isCheck</span>
+    </p>
+    <p>Name: @Model.Name</p>
+    <p>Phone: @Model.Phone</p>
+    <p>Email: @Model.Email</p>
+
+</main>

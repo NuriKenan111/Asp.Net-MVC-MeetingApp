@@ -1,7 +1,28 @@
+@model UserInfo
 @{
     ViewBag.Title = "Apply";
 }
-<h1 class="h4">Meeting giris formu</h1>
-<form action="">
+<h1 class="h4 text-center">MeetingApp Entry Form</h1>
+<form method="post" asp-controller="Meeting" asp-action="Apply">
+    <div asp-validation-summary="All" style="color: red;"></div>
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Name</label>
+        <input asp-for="Name" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Phone" class="form-label">Phone</label>
+        <input asp-for="Phone" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label">Email</label>
+        <input asp-for="Email" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="WillAttend" class="form-label">Participation status</label>
+        <select asp-for="WillAttend" class="form-select">
+            <option value="true">Yes,I'm coming</option>
+            <option value="false">No,I'm not coming</option>
+        </select>
+    </div>
     <button class="btn btn-primary" type="submit">Save</button>
 </form>

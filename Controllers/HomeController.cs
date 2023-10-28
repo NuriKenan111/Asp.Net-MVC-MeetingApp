@@ -6,13 +6,8 @@ public class HomeController : Controller
 {
     public IActionResult Index()
     {
-        var meetingInfo = new MeetingInfo(1, "Location 1",new DateTime(2022, 12, 10),10);
+        int viewCount = Repository.GetUserInfo().Where(x => x.WillAttend == true).Count();
+        var meetingInfo = new MeetingInfo(1, "Location 1",new DateTime(2022, 12, 10),viewCount);
         return View(meetingInfo);
     }
-    
-
-    
-
-    
-
 }
